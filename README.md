@@ -1,11 +1,6 @@
 # kozai-lidov-paper-code
-Code accompanying "Relativistic Destruction of the Kozai-Lidov Resonance in Cluster-Hardened Black Hole Triples": simulations of Kozai-Lidov oscillations in black-hole triples and the resulting eccentric gravitational-wave inspirals.
-
-# kozai-lidov-paper-code
 
 Code accompanying "Relativistic Destruction of the Kozai-Lidov Resonance in Cluster-Hardened Black Hole Triples": simulations of Kozai-Lidov oscillations in black-hole triples and the resulting eccentric gravitational-wave inspirals.
-
-Paper: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
 
 ## What this code does
 
@@ -19,12 +14,14 @@ For a fiducial hierarchical triple (15 + 15 Msun inner binary, 30 Msun tertiary)
 
 ## Installation
 
-Python [3.X] is recommended.
+Tested with Python 3.12 on Linux (WSL).
 
 ```
 git clone https://github.com/barkael327-a11y/kozai-lidov-paper-code.git
 cd kozai-lidov-paper-code
-pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt jupyter
 jupyter notebook KL_paper_code.ipynb
 ```
 
@@ -32,7 +29,7 @@ Dependencies: numpy, scipy, matplotlib, rebound, reboundx, pycbc.
 
 ## How to run
 
-Open `KL_paper_code.ipynb` and run all cells **in order, top to bottom**. Later cells use variables and functions defined in earlier ones. Each cell starts with a one-line comment describing what it does. Outputs are written to `results/` (data), `figures/` and `arxiv_figs/` (plots), which are created automatically and are not tracked in this repository.
+Open `KL_paper_code.ipynb` and run all cells **in order, top to bottom**. Later cells use variables and functions defined in earlier ones. Each cell starts with a one-line comment describing what it does. Outputs are written to `results/` (data), `figures/` and `arxiv_figs/` (plots). These folders are created automatically and are not tracked in this repository.
 
 ## Which cells produce which results
 
@@ -46,11 +43,11 @@ Open `KL_paper_code.ipynb` and run all cells **in order, top to bottom**. Later 
 | Figure 3: phase-space data (atlas and Hamiltonian) | 17-18 |
 | Figure 5: initial KL-phase robustness | 19-20 |
 
-Approximate runtimes: the direct N-body KL integration (cell 4) takes several minutes; the dense phase-space atlas (cell 17) about 2-3 minutes; the Hamiltonian (cell 18) about 10 seconds. The other cells were not timed.
+Approximate runtimes: the direct N-body KL integration (cell 4) takes several minutes, the dense phase-space atlas (cell 17) about 2-3 minutes, and the Hamiltonian (cell 18) about 10 seconds. The other cells were not timed.
 
 ## Not included
 
-This notebook does not contain the plotting code for Figures 1, 3, 4 and 6 [edit this list to match what you add].
+This notebook does not contain the plotting code for Figures 1, 3, 4 and 6.
 
 ## License
 
@@ -61,8 +58,6 @@ MIT. See [LICENSE](LICENSE).
 If you use this code, please cite the paper:
 
 ```
-[Your Name], "Relativistic Destruction of the Kozai-Lidov Resonance in
-Cluster-Hardened Black Hole Triples", arXiv:XXXX.XXXXX (2026).
+Kael Barba, "Relativistic Destruction of the Kozai-Lidov Resonance in
+Cluster-Hardened Black Hole Triples" (2026).
 ```
-
-Once the Zenodo DOI exists, add: `Code: https://doi.org/10.5281/zenodo.XXXXXXX`
